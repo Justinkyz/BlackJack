@@ -1,31 +1,20 @@
 <template>
   <div>
     <header>
-
       <div class="wrapper">
         <h1 class="welcome-title">Welcome to JC Blackjack</h1>
-
         <nav>
           <RouterLink to="/" exact>Home</RouterLink>
           <RouterLink to="/about" exact>About</RouterLink>
         </nav>
       </div>
     </header>
-
     <RouterView />
-
-    <div>
-      <h2>Blackjack Strategies</h2>
-      <MyList :items="strategies" />
-    </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router';
-import MyList from './components/MyList.vue';
-
-const strategies = ['Basic Strategy', 'Card Counting', 'Shuffle Tracking'];
 </script>
 
 <style scoped>
@@ -39,7 +28,6 @@ div {
   background-position: center;
 }
 
-
 .logo {
   display: block;
   margin: 0 auto 2rem;
@@ -47,11 +35,9 @@ div {
 
 .wrapper {
   display: flex;
-  justify-content: space-between; /* Elemente in der header in einer Zeile platzieren */
-  align-items: center; /* Elemente vertikal zentrieren */
+  justify-content: space-between;
+  align-items: center;
   padding: 1rem;
-
-
 }
 
 nav {
@@ -86,7 +72,6 @@ nav a:first-of-type {
     padding-right: calc(var(--section-gap) / 2);
   }
 
-
   header .wrapper {
     display: flex;
     place-items: flex-start;
@@ -100,6 +85,5 @@ nav a:first-of-type {
     padding: 1rem 0;
     margin-top: 1rem;
   }
-
 }
 </style>

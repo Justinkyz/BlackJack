@@ -11,3 +11,14 @@ const props = defineProps<{
   items: string[];
 }>();
 </script>
+
+<style scoped>
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ccc;
+}
+</style>

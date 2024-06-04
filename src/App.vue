@@ -5,7 +5,7 @@
         <h1 class="welcome-title">Welcome to JC Blackjack</h1>
         <nav>
           <RouterLink to="/" exact>Home</RouterLink>
-          <RouterLink to="/about" exact>About</RouterLink>
+          <RouterLink to="/leaderboard" exact>Leaderboard</RouterLink>
         </nav>
       </div>
     </header>

@@ -9,6 +9,6 @@ const apiClient = axios.create({
 
 export default {
   getRoot() {
-    return apiClient.get('/');
+    return apiClient.get('/leaderboard');
   }
 };

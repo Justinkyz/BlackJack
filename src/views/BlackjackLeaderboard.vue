@@ -23,23 +23,19 @@
 import { ref, onMounted } from 'vue';
 import api from '@/api/api';
 
-// Definiere eine reaktive Variable für die Bestenliste
 const leaderboard = ref<{ name: string, score: number }[]>([]);
 
-// Funktion zum Abrufen der Bestenliste von der API
 const fetchLeaderboard = async () => {
   console.log('Aktualisiere...');
-  api.getRoot()
-    .then((response) => {
-      console.log('Fetched leaderboard:', response.data);
-      leaderboard.value = response.data;
-    })
-    .catch((error) => {
-      console.error('Error fetching leaderboard:', error);
-    });
+  try {
+    const response = await api.getRoot();
+    console.log('Fetched leaderboard:', response.data);
+    leaderboard.value = response.data;
+  } catch (error) {
+    console.error('Error fetching leaderboard:', error);
+  }
 };
 
-// Rufe die Funktion fetchLeaderboard auf, wenn die Komponente gemountet wird
 onMounted(() => {
   fetchLeaderboard();
 });

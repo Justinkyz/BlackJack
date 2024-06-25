@@ -1,11 +1,12 @@
 <template>
-  <div>
+  <div id="app">
     <header>
       <div class="wrapper">
         <h1 class="welcome-title">Welcome to JC Blackjack</h1>
         <nav>
           <RouterLink to="/" exact>Home</RouterLink>
           <RouterLink to="/leaderboard" exact>Leaderboard</RouterLink>
+          <RouterLink to="/blackjack" exact>Blackjack</RouterLink>
         </nav>
       </div>
     </header>

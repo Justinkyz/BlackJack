@@ -1,26 +1,39 @@
+// src/api/api.ts
 import axios from 'axios';
+import type { AxiosResponse } from 'axios';
+import type { GameState } from '@/types';
 
 const apiClient = axios.create({
-  baseURL: 'https://meilenstein1.onrender.com', // Passe die URL an deine Backend-URL an
+  baseURL: 'https://meilenstein1.onrender.com', // Adjust the URL to your backend URL
   headers: {
     'Content-Type': 'application/json'
   }
 });
 
+const handleResponse = async <T>(request: () => Promise<AxiosResponse<T>>): Promise<T> => {
+  try {
+    const response = await request();
+    return response.data;
+  } catch (error) {
+    console.error('API request error:', error);
+    throw error;
+  }
+};
+
 export default {
   getRoot() {
-    return apiClient.get('/leaderboard');
+    return handleResponse<any>(() => apiClient.get('/leaderboard'));
   },
   startGame() {
-    return apiClient.get('/api/blackjack/start');
+    return handleResponse<GameState>(() => apiClient.get('/api/blackjack/start'));
   },
   getStatus() {
-    return apiClient.get('/api/blackjack/status');
+    return handleResponse<GameState>(() => apiClient.get('/api/blackjack/status'));
   },
   hit() {
-    return apiClient.post('/api/blackjack/hit');
+    return handleResponse<GameState>(() => apiClient.post('/api/blackjack/hit'));
   },
   stand() {
-    return apiClient.post('/api/blackjack/stand');
+    return handleResponse<GameState>(() => apiClient.post('/api/blackjack/stand'));
   }
 };

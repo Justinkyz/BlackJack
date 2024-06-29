@@ -66,7 +66,7 @@ const stand = async () => {
 </script>
 
 };
-</script>
+
 <style scoped>
 h2 {
   font-size: 2rem;

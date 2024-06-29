@@ -1,24 +1,25 @@
 {
   "compilerOptions": {
-    "target": "esnext",                          // Specifies the ECMAScript target version
-    "module": "esnext",                          // Specifies the module code generation
-    "strict": true,                              // Enables strict type-checking options
-    "baseUrl": ".",                              // Base directory to resolve non-relative module names
+    "target": "esnext",
+    "module": "esnext",
+    "strict": true,
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]                           // Alias for the src directory
+      "@/*": ["src/*"]
     },
-    "moduleResolution": "node",                  // Module resolution strategy
-    "esModuleInterop": true,                     // Enables interoperability between CommonJS and ES Modules
-    "forceConsistentCasingInFileNames": true,    // Disallows inconsistently-cased references to the same file
-    "skipLibCheck": true,                        // Skip type checking of declaration files
-    "jsx": "preserve"                            // Preserve JSX syntax for Vue SFCs
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "jsx": "preserve"
   },
   "include": [
-    "src/**/*.ts",                               // Include all TypeScript files in src directory
-    "src/**/*.vue"                               // Include all Vue files in src directory
+    "src/**/*.ts",
+    "src/**/*.vue",
+    "env.d.ts"
   ],
   "exclude": [
-    "node_modules",                              // Exclude node_modules directory
-    "dist"                                       // Exclude the build output directory
+    "node_modules",
+    "dist"
   ]
 }

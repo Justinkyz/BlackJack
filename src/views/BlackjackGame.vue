@@ -20,6 +20,7 @@
   </div>
 </template>
 
+
 <script setup lang="ts">
 import { ref } from 'vue';
 import api from '@/api/api';
@@ -29,32 +30,43 @@ const game = ref<GameState | null>(null);
 
 const startGame = async () => {
   try {
+    console.log('Starting game...'); // Debugging: Start of startGame function
     const response = await api.startGame();
+    console.log('Spiel gestartet:', response); // Debugging: API response
     game.value = response;
+    console.log('Aktueller Spielzustand:', game.value); // Debugging: Game state after API call
   } catch (error) {
-    console.error('Fehler beim Starten des Spiels:', error);
+    console.error('Fehler beim Starten des Spiels:', error); // Debugging: Error message
   }
 };
 
 const hit = async () => {
   try {
+    console.log('Player hits...'); // Debugging: Start of hit function
     const response = await api.hit();
+    console.log('Hit response:', response); // Debugging: API response
     game.value = response;
+    console.log('Aktueller Spielzustand:', game.value); // Debugging: Game state after API call
   } catch (error) {
-    console.error('Fehler bei Hit:', error);
+    console.error('Fehler bei Hit:', error); // Debugging: Error message
   }
 };
 
 const stand = async () => {
   try {
+    console.log('Player stands...'); // Debugging: Start of stand function
     const response = await api.stand();
+    console.log('Stand response:', response); // Debugging: API response
     game.value = response;
+    console.log('Aktueller Spielzustand:', game.value); // Debugging: Game state after API call
   } catch (error) {
-    console.error('Fehler bei Stand:', error);
+    console.error('Fehler bei Stand:', error); // Debugging: Error message
   }
 };
 </script>
 
+};
+</script>
 <style scoped>
 h2 {
   font-size: 2rem;

@@ -12,9 +12,10 @@ const apiClient = axios.create({
 const handleResponse = async <T>(request: () => Promise<AxiosResponse<T>>): Promise<T> => {
   try {
     const response = await request();
+    console.log('API response:', response); // Debugging: API response
     return response.data;
   } catch (error) {
-    console.error('API request error:', error);
+    console.error('API request error:', error); // Debugging: Error message
     throw error;
   }
 };

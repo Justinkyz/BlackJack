@@ -1,7 +1,6 @@
-// src/api/api.ts
 import axios from 'axios';
 import type { AxiosResponse } from 'axios';
-import type { GameState } from '@/types';
+import type { GameState } from '@/types/GameState';
 
 const apiClient = axios.create({
   baseURL: 'https://meilenstein1.onrender.com', // Adjust the URL to your backend URL
@@ -25,15 +24,15 @@ export default {
     return handleResponse<any>(() => apiClient.get('/leaderboard'));
   },
   startGame() {
-    return handleResponse<GameState>(() => apiClient.get('/api/blackjack/start'));
+    return handleResponse<GameState>(() => apiClient.post('/api/game/start'));
   },
   getStatus() {
-    return handleResponse<GameState>(() => apiClient.get('/api/blackjack/status'));
+    return handleResponse<GameState>(() => apiClient.get('/api/game/status'));
   },
   hit() {
-    return handleResponse<GameState>(() => apiClient.post('/api/blackjack/hit'));
+    return handleResponse<GameState>(() => apiClient.post('/api/game/hit'));
   },
   stand() {
-    return handleResponse<GameState>(() => apiClient.post('/api/blackjack/stand'));
+    return handleResponse<GameState>(() => apiClient.post('/api/game/stand'));
   }
 };

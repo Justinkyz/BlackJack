@@ -23,13 +23,14 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import api from '@/api/api';
+import type { GameState } from '@/types/GameState';
 
-const game = ref(null);
+const game = ref<GameState | null>(null);
 
 const startGame = async () => {
   try {
     const response = await api.startGame();
-    game.value = response.data;
+    game.value = response;
   } catch (error) {
     console.error('Fehler beim Starten des Spiels:', error);
   }
@@ -38,7 +39,7 @@ const startGame = async () => {
 const hit = async () => {
   try {
     const response = await api.hit();
-    game.value = response.data;
+    game.value = response;
   } catch (error) {
     console.error('Fehler bei Hit:', error);
   }
@@ -47,7 +48,7 @@ const hit = async () => {
 const stand = async () => {
   try {
     const response = await api.stand();
-    game.value = response.data;
+    game.value = response;
   } catch (error) {
     console.error('Fehler bei Stand:', error);
   }

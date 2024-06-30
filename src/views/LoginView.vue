@@ -30,9 +30,12 @@ const login = () => {
 
   axios.post('/api/login', { username: username.value, password: password.value })
     .then(response => {
-      console.log('Login successful:', response.data);
-      localStorage.setItem('auth', 'true'); // Speichern des Auth-Status
-      router.push('/home'); // Weiterleitung nach erfolgreicher Anmeldung
+      if (response.data === "Login successful") {
+        localStorage.setItem('auth', 'true'); // Speichern des Auth-Status
+        router.push('/home'); // Weiterleitung nach erfolgreicher Anmeldung
+      } else {
+        loginError.value = 'Invalid username or password';
+      }
     })
     .catch(error => {
       console.error('Error logging in:', error);

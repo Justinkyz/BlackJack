@@ -1,12 +1,11 @@
-import type { UnwrapRef } from 'vue'
+// src/types/GameState.ts
 
 export interface Card {
+  value: number | string;
   suit: string;
-  rank: string;
 }
 
 export interface GameState {
-  data: UnwrapRef<null>
   playerHand: Card[];
   dealerHand: Card[];
   playerBalance: number;

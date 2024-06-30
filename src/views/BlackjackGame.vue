@@ -64,7 +64,7 @@ const stand = async () => {
 const getCardImage = (card: Card) => {
   const value = card.value.toString().toLowerCase();
   const suit = card.suit.toLowerCase();
-  return require(`@/assets/cards/${value}_of_${suit}.png`);
+  return new URL(`@/assets/cards/${value}_of_${suit}.png`, import.meta.url).href;
 };
 </script>
 

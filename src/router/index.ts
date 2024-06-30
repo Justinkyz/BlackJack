@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
-import LoginView from '../views/LoginView.vue';
+import LoginView from '../views/LoginView.vue'; // Überprüfen Sie diesen Pfad
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.VITE_BASE_URL),

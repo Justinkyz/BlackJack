@@ -3,7 +3,7 @@ import type { AxiosResponse } from 'axios';
 import type { GameState } from '@/types/GameState';
 
 const apiClient = axios.create({
-  baseURL: 'https://meilenstein1.onrender.com', // Passe die URL an deine Backend-URL an
+  baseURL: 'https://meilenstein1.onrender.com', // Adjust the URL to your backend URL
   headers: {
     'Content-Type': 'application/json'
   }

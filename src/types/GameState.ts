@@ -1,12 +1,15 @@
-// src/types/GameState.ts
+import type { UnwrapRef } from 'vue'
+
 export interface Card {
-  value: number;
   suit: string;
+  rank: string;
 }
 
 export interface GameState {
   playerHand: Card[];
   dealerHand: Card[];
-  // Weitere Eigenschaften des Spielzustands hinzufügen, falls vorhanden
+  playerBalance: number;
+  dealerBalance: number;
+  status: string;
+  result: string;
 }
-

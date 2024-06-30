@@ -21,7 +21,12 @@
 import { ref, onMounted } from 'vue';
 import axios from 'axios';
 
-const comments = ref([]);
+interface Comment {
+  id: number;
+  text: string;
+}
+
+const comments = ref<Comment[]>([]);
 const commentText = ref('');
 
 const fetchComments = () => {

@@ -16,28 +16,67 @@
       </tr>
       </tbody>
     </table>
+    <div>
+      <h2>Comments</h2>
+      <div>
+        <textarea v-model="commentText" rows="4" cols="50" placeholder="Enter your comment"></textarea>
+        <button @click="addComment">Add Comment</button>
+      </div>
+      <div v-if="comments.length">
+        <h3>Comment List</h3>
+        <div v-for="comment in comments" :key="comment.id">
+          <p>{{ comment.text }}</p>
+        </div>
+      </div>
+      <div v-else>
+        <p>No comments yet.</p>
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
-import api from '@/api/api';
+import axios from 'axios';
 
 const leaderboard = ref<{ name: string, score: number }[]>([]);
+const comments = ref<{ id: number, text: string }[]>([]);
+const commentText = ref('');
 
 const fetchLeaderboard = async () => {
-  console.log('Aktualisiere...');
   try {
-    const response = await api.getRoot();
-    console.log('Fetched leaderboard:', response.data);
+    const response = await axios.get('/api/leaderboard');
     leaderboard.value = response.data;
   } catch (error) {
     console.error('Error fetching leaderboard:', error);
   }
 };
 
+const fetchComments = async () => {
+  try {
+    const response = await axios.get('/api/comments');
+    comments.value = response.data;
+  } catch (error) {
+    console.error('Error fetching comments:', error);
+  }
+};
+
+const addComment = async () => {
+  if (commentText.value.trim() === '') {
+    return;
+  }
+  try {
+    await axios.post('/api/comments', { text: commentText.value });
+    commentText.value = '';
+    fetchComments();
+  } catch (error) {
+    console.error('Error adding comment:', error);
+  }
+};
+
 onMounted(() => {
   fetchLeaderboard();
+  fetchComments();
 });
 </script>
 
@@ -61,6 +100,7 @@ button:hover {
 table {
   width: 100%;
   border-collapse: collapse;
+  margin-bottom: 2rem;
 }
 
 th, td {
@@ -75,5 +115,10 @@ thead {
 
 tbody tr:hover {
   background-color: #f1f1f1;
+}
+
+textarea {
+  width: 100%;
+  margin-bottom: 10px;
 }
 </style>

@@ -19,72 +19,68 @@ import { RouterLink, RouterView } from 'vue-router';
 </script>
 
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-div {
-  background-image: url('/');
-  background-size: cover;
-  background-position: center;
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f2f5;
+  margin: 0;
+  padding: 0;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .wrapper {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  width: 100%;
+}
+
+.welcome-title {
+  font-size: 1.5rem;
+  margin: 0;
 }
 
 nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
+  display: flex;
+  gap: 1rem;
 }
 
 nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease;
+  border-radius: 4px;
 }
 
-nav a:first-of-type {
-  border: 0;
+nav a:hover {
+  background-color: #34495e;
 }
 
-@media (min-width: 1024px) {
+nav a.router-link-exact-active {
+  background-color: #007bff;
+  color: white;
+}
+
+@media (max-width: 768px) {
   header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
+  .welcome-title {
+    margin-bottom: 1rem;
   }
 
   nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-    padding: 1rem 0;
-    margin-top: 1rem;
+    justify-content: flex-start;
   }
 }
 </style>

@@ -34,7 +34,8 @@ header {
   width: 100%;
   padding: 1rem 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
 }
 
 .header-content {
@@ -42,6 +43,7 @@ header {
   flex-direction: column;
   align-items: center;
   width: 100%;
+  max-width: 1200px;
 }
 
 .welcome-title {
@@ -52,6 +54,7 @@ header {
 .nav {
   margin-top: 1rem;
   display: flex;
+  justify-content: center;
   gap: 1rem;
 }
 
@@ -74,9 +77,9 @@ header {
 
 main {
   padding: 2rem;
+  width: 100%;
   display: flex;
   justify-content: center;
-  width: 100%;
   box-sizing: border-box;
 }
 </style>

@@ -6,6 +6,7 @@
       <thead>
       <tr>
         <th>Name</th>
+
         <th>Score</th>
       </tr>
       </thead>

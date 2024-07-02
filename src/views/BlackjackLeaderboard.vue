@@ -1,13 +1,13 @@
 <template>
   <div class="container">
-    <aside class="sidebar">
+    <header class="header">
       <h1>Welcome to JC Blackjack</h1>
-      <nav>
+      <nav class="nav">
         <router-link to="/">Home</router-link>
         <router-link to="/leaderboard">Leaderboard</router-link>
         <router-link to="/blackjack">Blackjack</router-link>
       </nav>
-    </aside>
+    </header>
     <main class="main-content">
       <section class="leaderboard-section">
         <h2>Blackjack Leaderboard</h2>
@@ -100,31 +100,39 @@ body {
 
 .container {
   display: flex;
+  flex-direction: column;
   min-height: 100vh;
 }
 
-.sidebar {
+.header {
   background-color: #2c3e50;
   padding: 1rem;
-  width: 250px;
   color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.sidebar h1 {
+.header h1 {
+  margin: 0;
   font-size: 1.5rem;
-  margin-bottom: 1rem;
 }
 
-.sidebar nav a {
-  display: block;
-  padding: 0.5rem 0;
+.nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav a {
   color: white;
   text-decoration: none;
+  padding: 0.5rem 1rem;
   transition: background-color 0.3s ease;
 }
 
-.sidebar nav a:hover {
+.nav a:hover {
   background-color: #34495e;
+  border-radius: 4px;
 }
 
 .main-content {

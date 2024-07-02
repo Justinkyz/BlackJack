@@ -91,15 +91,23 @@ onMounted(() => {
 </script>
 
 <style scoped>
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f2f5;
+  margin: 0;
+  padding: 0;
+}
+
 .container {
   display: flex;
   min-height: 100vh;
 }
 
 .sidebar {
-  background-color: #f4f4f4;
+  background-color: #2c3e50;
   padding: 1rem;
-  width: 200px;
+  width: 250px;
+  color: white;
 }
 
 .sidebar h1 {
@@ -110,18 +118,22 @@ onMounted(() => {
 .sidebar nav a {
   display: block;
   padding: 0.5rem 0;
-  color: #333;
+  color: white;
   text-decoration: none;
   transition: background-color 0.3s ease;
 }
 
 .sidebar nav a:hover {
-  background-color: #ddd;
+  background-color: #34495e;
 }
 
 .main-content {
   flex: 1;
   padding: 2rem;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin: 2rem;
 }
 
 .leaderboard-section, .comments-section {
@@ -155,9 +167,9 @@ h2 {
 }
 
 .leaderboard-table th, .leaderboard-table td {
-  padding: 0.5rem;
+  padding: 0.75rem;
   text-align: left;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #ddd;
 }
 
 .leaderboard-table thead {
@@ -171,15 +183,15 @@ h2 {
 .textarea {
   width: 100%;
   margin-bottom: 10px;
-  padding: 0.5rem;
+  padding: 0.75rem;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
 .comment-item {
-  padding: 0.5rem;
+  padding: 0.75rem;
   background-color: #f9f9f9;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   border-radius: 4px;
   margin-bottom: 0.5rem;
 }

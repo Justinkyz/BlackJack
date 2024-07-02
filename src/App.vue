@@ -33,9 +33,8 @@ header {
   color: white;
   width: 100%;
   padding: 1rem 0;
-  display: flex;
-  justify-content: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
 }
 
 .header-content {
@@ -43,9 +42,6 @@ header {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 1200px;
-  padding: 0 2rem;
-  box-sizing: border-box;
 }
 
 .welcome-title {
@@ -80,5 +76,7 @@ main {
   padding: 2rem;
   display: flex;
   justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
 }
 </style>

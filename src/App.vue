@@ -3,7 +3,7 @@
     <header>
       <div class="wrapper">
         <h1 class="welcome-title">Welcome to JC Blackjack</h1>
-        <nav>
+        <nav class="nav">
           <RouterLink to="/" exact>Home</RouterLink>
           <RouterLink to="/leaderboard" exact>Leaderboard</RouterLink>
           <RouterLink to="/blackjack" exact>Blackjack</RouterLink>
@@ -31,28 +31,29 @@ header {
   color: white;
   padding: 1rem 2rem;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .wrapper {
   display: flex;
+  flex-direction: column;
   align-items: center;
   width: 100%;
 }
 
 .welcome-title {
-  font-size: 1.5rem;
-  margin: 0;
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
-nav {
+.nav {
   display: flex;
   gap: 1rem;
 }
 
-nav a {
+.nav a {
   color: white;
   text-decoration: none;
   padding: 0.5rem 1rem;
@@ -60,27 +61,23 @@ nav a {
   border-radius: 4px;
 }
 
-nav a:hover {
+.nav a:hover {
   background-color: #34495e;
 }
 
-nav a.router-link-exact-active {
+.nav a.router-link-exact-active {
   background-color: #007bff;
   color: white;
 }
 
 @media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
+  .wrapper {
+    align-items: center;
   }
 
-  .welcome-title {
-    margin-bottom: 1rem;
-  }
-
-  nav {
-    justify-content: flex-start;
+  .nav {
+    justify-content: center;
+    flex-wrap: wrap;
   }
 }
 </style>

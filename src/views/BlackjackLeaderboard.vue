@@ -45,7 +45,7 @@ const commentText = ref('');
 
 const fetchLeaderboard = async () => {
   try {
-    const response = await axios.get('/api/leaderboard');
+    const response = await axios.get('https://blackjack-tent.onrender.com/api/leaderboard');
     leaderboard.value = response.data;
   } catch (error) {
     console.error('Error fetching leaderboard:', error);
@@ -54,7 +54,7 @@ const fetchLeaderboard = async () => {
 
 const fetchComments = async () => {
   try {
-    const response = await axios.get('/api/comments');
+    const response = await axios.get('https://blackjack-tent.onrender.com/api/comments');
     comments.value = response.data;
   } catch (error) {
     console.error('Error fetching comments:', error);
@@ -66,7 +66,7 @@ const addComment = async () => {
     return;
   }
   try {
-    await axios.post('/api/comments', { text: commentText.value });
+    await axios.post('https://blackjack-tent.onrender.com/api/comments', { text: commentText.value });
     commentText.value = '';
     fetchComments();
   } catch (error) {

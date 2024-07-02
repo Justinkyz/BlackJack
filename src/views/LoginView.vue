@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="login-container">
     <h2>Login</h2>
     <div>
       <input v-model="username" type="text" placeholder="Enter your username" />
@@ -45,13 +45,42 @@ const login = () => {
 </script>
 
 <style scoped>
+.login-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
 input {
   width: 100%;
   margin-bottom: 10px;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 button {
-  margin-bottom: 20px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
 }
 
 .error {

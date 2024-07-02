@@ -1,14 +1,18 @@
 <template>
   <div id="app">
     <header>
-      <h1 class="welcome-title">Welcome to JC Blackjack</h1>
-      <nav class="nav">
-        <RouterLink to="/" exact>Home</RouterLink>
-        <RouterLink to="/leaderboard" exact>Leaderboard</RouterLink>
-        <RouterLink to="/blackjack" exact>Blackjack</RouterLink>
-      </nav>
+      <div class="header-content">
+        <h1 class="welcome-title">Welcome to JC Blackjack</h1>
+        <nav class="nav">
+          <RouterLink to="/" exact>Home</RouterLink>
+          <RouterLink to="/leaderboard" exact>Leaderboard</RouterLink>
+          <RouterLink to="/blackjack" exact>Blackjack</RouterLink>
+        </nav>
+      </div>
     </header>
-    <RouterView />
+    <main>
+      <RouterView />
+    </main>
   </div>
 </template>
 
@@ -29,9 +33,12 @@ header {
   color: white;
   padding: 1rem 2rem;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+  text-align: center;
 }
 
 .welcome-title {
@@ -41,6 +48,7 @@ header {
 
 .nav {
   display: flex;
+  justify-content: center;
   gap: 1rem;
 }
 
@@ -61,10 +69,15 @@ header {
   color: white;
 }
 
+main {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
 @media (max-width: 768px) {
   .nav {
     flex-wrap: wrap;
-    justify-content: center;
   }
 }
 </style>

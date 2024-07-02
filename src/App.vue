@@ -34,8 +34,10 @@ header {
   width: 100%;
   padding: 1rem 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 
 .header-content {
@@ -44,6 +46,7 @@ header {
   align-items: center;
   width: 100%;
   max-width: 1200px;
+  margin: 0 auto;
 }
 
 .welcome-title {
@@ -76,7 +79,7 @@ header {
 }
 
 main {
-  padding: 2rem;
+  padding: 6rem 2rem 2rem; /* Adjusted padding to account for the fixed header */
   width: 100%;
   display: flex;
   justify-content: center;
